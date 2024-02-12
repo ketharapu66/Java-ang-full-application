@@ -1,0 +1,40 @@
+/* CSS for the provided HTML */
+
+body {
+    font-family: Arial, sans-serif; /* Setting a default font for the page */
+    padding: 20px; /* Adding some padding to the body for space around the content */
+}
+
+label {
+    display: block; /* Makes labels behave like block elements */
+    margin-top: 15px; /* Space above each label */
+    font-weight: bold; /* Makes the labels bold */
+}
+
+input {
+    width: 20%; /* Makes the input fields occupy the full width of their container */
+    padding: 8px; /* Adds padding inside the input fields */
+    margin-top: 5px; /* Space above each input field */
+    border: 1px solid #ccc; /* Adds a border around the input fields */
+    border-radius: 4px; /* Rounds the corners of the input fields */
+}
+
+button {
+    padding: 10px 15px; /* Adds padding inside the button */
+    margin-top: 15px; /* Space above the button */
+    background-color: yellowgreen; /* Blue background color */
+    color:black; /* White text color */
+    border: none; /* Removes the default button border */
+    border-radius: 4px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes the cursor to a hand when hovering over the button */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}

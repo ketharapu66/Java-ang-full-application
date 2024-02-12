@@ -1,0 +1,48 @@
+<!-- form.component.html -->
+<button><a routerLink="/nav">back</a></button>
+<h2>Form Component Works! hello </h2>
+<div class="form-container">
+  <form (ngSubmit)="submitForm()">
+    <div class="input-row">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="formData.name" required />
+    </div>
+    <div class="input-row">
+      <label for="district">District:</label>
+      <select id="district" name="district" [(ngModel)]="formData.district" required>
+        <option value="khammam">khammam</option>
+        <option value="vijyawada">vijyawada</option>
+        <option value="guntur">guntur</option>
+        <option value="ongole">ongole</option> 
+      </select>
+    </div>
+    <div class="input-row">
+      <label for="city">City:</label>
+      <select id="city" name="city" [(ngModel)]="formData.city" required>
+        <option value="hyderabad">hyderabad</option>
+        <option value="Gosala">Gosala</option>
+        <option value="konnuru">konnuru</option>
+        <option value="konasema">konasema</option>
+       
+      </select>
+    </div>
+    <div class="input-row">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+  <div *ngIf="submittedData">
+    <h3>Submitted Values</h3>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th>District</th>
+        <th>City</th>
+      </tr>
+      <tr>
+        <td>{{ submittedData.name }}</td>
+        <td>{{ submittedData.district }}</td>
+        <td>{{ submittedData.city }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

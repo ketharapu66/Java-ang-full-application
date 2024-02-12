@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Validation Page</title>
+    <style>
+        /* Optional styling for the error message */
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<button><a routerLink="/nav">back</a></button>
+<body>
+
+    <div>
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" [(ngModel)]="startDate" placeholder="Select Start Date">
+    </div>
+
+    <div>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" [(ngModel)]="endDate" placeholder="Select End Date">
+    </div>
+
+    <div>
+        <label for="employeeId">Employee ID:</label>
+        <input type="number" id="employeeId" [(ngModel)]="employeeId" placeholder="Enter Employee ID">
+        <div *ngIf="errorId" class="error-message">{{ errorId }}</div>
+    </div>
+
+    <div>
+        <label for="employeeName">Employee Name:</label>
+        <input type="text" id="employeeName" [(ngModel)]="employeeName" placeholder="Enter Employee Name">
+        <div *ngIf="errorName" class="error-message">{{ errorName }}</div>
+    </div>
+
+    <button (click)="onSubmit()">Submit</button><br><br>&nbsp;
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+
+</body>
+
+</html>

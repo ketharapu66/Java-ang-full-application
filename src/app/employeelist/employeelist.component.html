@@ -1,0 +1,111 @@
+<button class="nav-button"><a routerLink="employee">Employee Details</a></button>
+
+<div class="container">
+
+  <div class="form-box left-top">
+    <form (ngSubmit)="onSubmit()">
+      <h2 class="form-title">Add New Employee</h2>
+      <label class="form-label">
+        ID:
+        <input type="number" [(ngModel)]="newEmployee.id" name="id" class="form-input">
+      </label>
+
+      <label class="form-label">
+        Name:
+        <input type="text" [(ngModel)]="newEmployee.name" name="name" class="form-input">
+      </label>
+
+      <label class="form-label">
+        Salary:
+        <input type="number" [(ngModel)]="newEmployee.salary" name="salary" class="form-input">
+      </label>
+
+      <label class="form-label">
+        Age:
+        <input type="number" [(ngModel)]="newEmployee.age" name="age" class="form-input">
+      </label>
+
+      <button type="submit" class="form-button">Add Employee</button>
+    </form>
+  </div>
+
+  <div class="form-box right-top">
+    <form (ngSubmit)="onDelete()">
+      <h2 class="form-title">Delete Employee</h2>
+      <label class="form-label">
+        Select Employee ID:
+        <select [(ngModel)]="deleteId" name="deleteId" class="form-input">
+          <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.id }}</option>
+        </select>
+      </label>
+
+      <button type="submit" class="form-button delete-button">Delete</button>
+    </form>
+  </div>
+
+  <div class="form-box left-bottom">
+    <form (ngSubmit)="onUpdate()">
+      <h2 class="form-title">Update Employee</h2>
+      <label>
+        Select Employee ID:
+        <select [(ngModel)]="updateEmployee.id" name="selectedEmployeeId" (change)="onEmployeeIdSelected()">
+          <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.id }}</option>
+        </select>
+      </label>
+
+      <label class="form-label">
+        Name:
+        <input type="text" [(ngModel)]="updateEmployee.name" name="name" class="form-input">
+      </label>
+
+      <label class="form-label">
+        Salary:
+        <input type="number" [(ngModel)]="updateEmployee.salary" name="salary" class="form-input">
+      </label>
+
+      <label class="form-label">
+        Age:
+        <input type="number" [(ngModel)]="updateEmployee.age" name="age" class="form-input">
+      </label>
+
+      <button type="submit" class="form-button update-button">Update Employee</button>
+    </form>
+  </div>
+
+  <div class="form-box right-bottom">
+    <form (ngSubmit)="onSearchById()">
+      <h2 class="form-title">Search by ID</h2>
+      <label class="form-label">
+        Select Employee ID:
+        <select [(ngModel)]="searchedEmployeeId" name="searchedEmployeeId" class="form-input">
+          <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.id }}</option>
+        </select>
+      </label>
+
+      <button type="submit" class="form-button search-button">Search</button>
+    </form>
+
+    <div *ngIf="selectedEmployee">
+      <h2>Employee Details</h2>
+      <table class="employee-table">
+        <tr>
+          <td>ID:</td>
+          <td>{{ selectedEmployee.id }}</td>
+        </tr>
+        <tr>
+          <td>Name:</td>
+          <td>{{ selectedEmployee.name }}</td>
+        </tr>
+        <tr>
+          <td>Salary:</td>
+          <td>{{ selectedEmployee.salary }}</td>
+        </tr>
+        <tr>
+          <td>Age:</td>
+          <td>{{ selectedEmployee.age }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,49 @@
+<body>
+    <h2>Navigation Page Dropdown List</h2>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <span class="dropdown-toggle" (click)="toggleFormsDropdown()">Forms ▼</span>
+                <ul class="dropdown-content" *ngIf="isFormsDropdownOpen">
+                    <li>
+                        <span class="subscreen-toggle" (click)="toggleFormSubDropdown()">Form</span>
+                        <div class="subscreen" *ngIf="isFormSubDropdownOpen">
+                            <a routerLink="/form/form1">Form 1</a>
+                            <a routerLink="/form/form2">Form 2</a>
+                        </div>
+                    </li>
+                    <li><a routerLink="/date-form">Date Form</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <span class="dropdown-toggle" (click)="toggleServiceDropdown()">Service ▼</span>
+                <ul class="dropdown-content" *ngIf="isServiceDropdownOpen">
+                    <li><a routerLink="/form">Form 1</a></li>
+                    <li><a routerLink="/date-form">Date Form</a></li>
+                </ul>
+            </li>
+            <!-- New dropdown for Subscreens -->
+            <li class="dropdown">
+                <span class="dropdown-toggle" (click)="toggleSubscreensDropdown()">Subscreens ▼</span>
+                <ul class="dropdown-content" *ngIf="isSubscreensDropdownOpen">
+                    <li class="dropdown">
+                        <span class="subscreen-toggle" (click)="toggleSubscreen1Dropdown()">Sublist 1 ▼</span>
+                        <ul class="dropdown-content" *ngIf="isSubscreen1DropdownOpen">
+                            <li><a routerLink="/sublist1/subscreen1">Subscreen 1</a></li>
+                            <!-- Add more subscreens for sublist1 as needed -->
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <span class="subscreen-toggle" (click)="toggleSubscreen2Dropdown()">Sublist 2 ▼</span>
+                        <ul class="dropdown-content" *ngIf="isSubscreen2DropdownOpen">
+                            <li><a routerLink="/sublist2/subscreen2">Subscreen 2</a></li>
+                            <!-- Add more subscreens for sublist2 as needed -->
+                        </ul>
+                    </li>
+                    <!-- Add more sublist dropdowns as needed -->
+                </ul>
+            </li>
+            <li><a href="#" (click)="logout()">Logout</a></li>
+        </ul>
+    </nav>
+</body>

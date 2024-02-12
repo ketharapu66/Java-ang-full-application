@@ -1,0 +1,88 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: orange;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Main navigation list */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    color: #e32222;
+    font-size: 16px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background-color: black;
+    border-radius: 2px;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: greenyellow;
+    min-width: 50px;
+    display: none;
+    z-index: 1;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: black;
+}
+
+/* Subscreen styles */
+.subscreen {
+    position: absolute;
+    top: 100%;   /* Updated to align with the dropdown below */
+    left: 0;
+    background-color: black;
+    min-width: 50px;
+    display: none;
+    z-index: 1;
+}
+
+.subscreen.show {
+    display: block;
+}
+
+/* Additional styles for Subscreens dropdown */
+.subscreens-dropdown .subscreen {
+    left: 0;
+    margin-top: -1px;  /* Optional: Adds a slight overlap to prevent a gap */
+}

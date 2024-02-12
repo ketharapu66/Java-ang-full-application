@@ -1,0 +1,47 @@
+<div class="employee-list">
+  <div>
+    <h2>Employee List</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Salary</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.name }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>{{ employee.age }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="selectedEmployee" class="selected-employee-details">
+  <h2>Selected Employee Details</h2>
+  <table border="2">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Age</th>
+        <!-- Add other table headers as needed -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ selectedEmployee.id }}</td>
+        <td>{{ selectedEmployee.name }}</td>
+        <td>{{ selectedEmployee.salary }}</td>
+        <td>{{ selectedEmployee.age }}</td>
+        <!-- Add other table data as needed -->
+      </tr>
+    </tbody>
+  </table>
+</div>
